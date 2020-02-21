@@ -1,5 +1,5 @@
 # HCI
-Small WPF app about manifestations of one city. 
+Small WPF app that enables managing data about manifestations of one city. You can add,change or delete manifestations, types of manifestations, or mark the manifestation with marker. You can also drag and drop manifestations on the map.
 
 ## Download instructions 
 
