@@ -17,3 +17,7 @@ To run the application you need to install:
 ## Starting 
 
 Open Visual Studio, go to File/ Open/ Project/Solution. Inside the folder named HCI, find file with extension ".sln" and click "Open". When importing of the project is successfully finished, just click Start. 
+
+## Author 
+
+Zeljana Sipovac
