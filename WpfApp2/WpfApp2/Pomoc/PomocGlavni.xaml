@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfApp2.Pomoc.PomocGlavni"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2.Pomoc"
+        mc:Ignorable="d"
+         WindowStartupLocation="CenterScreen"
+        Title="PomocGlavni" Height="487" Width="479">
+    <Grid Margin="0,0,2,2" Background="#FFC5D6A6">
+        <Frame Source="file:///C:/Users/Zeljana/Desktop/HCI/WpfApp2/WpfApp2/Help.html"> </Frame>
+        <!--<TextBlock HorizontalAlignment="Left" Height="434" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="440"><Run Text="Ova aplikacija sluzi za evidenciju podataka o manifestacijama u nekom gradu. Manifestacije unosi ru"/><Run Text="čno korisnik i svaka manifestacija,nakon što je unešena može da se prevuče na mjesto održavanja direktno na mapu (drag and drop tehnikom). "/><Run Text="Svaka manifestacija je opisana preko: svoje jedinstvene ljudski-čitljive oznake koju unosi"/><Run Text=" "/><Run Text="korisnik, imena, opisa, tipa, statusa za služenje alkohola, ikonice, da li je dostupna za hendikepirane,"/><Run Text=" "/><Run Text="da li je na njoj dozvoljeno pušenje, da li je napolju ili unutra, kategorije cena, očekivane publike, i"/><Run Text=" "/><Run Text="datuma održavanja. Ikonica je sličica koja se učitava i koja se koristi da se manifestacija označi na mapi"/><Run Text=" "/><Run Text="i može da se i ne postavi i, ako se ne postavi, onda se podrazumevano uzima ikonica tipa. Status"/><LineBreak/><Run Text="služenja alkohola je jedna od slededih vrednosti: nema alkohola, alkohol se može doneti, alkohol se"/><Run Text=" "/><Run Text="može kupiti na licu mesta. Kategorija cena je jedna od slededih vrednosti: besplatno, niske cene,"/><Run Text=" "/><Run Text="srednje cene, visoke cene. Manifestacije takođe mogu biti i &quot;tagovane&quot; sa nijednom, jednom, ili više"/><LineBreak/><Run Text="etiketa. Etikete specificira korisnik i one su opisane svojom jedinstvenom ljudski-čitljivom oznakom"/><Run Text=" "/><Run Text="koju unosi korisnik, bojom i opisom."/><LineBreak/><Run Text="Tip manifestacije je opisan preko svoje jedinstvene ljudski-čitljive oznake koju unosi korisnik,"/><Run Text=" "/><Run Text="imena, ikonice, i opisa. Ikonica je sličica koja se učitava i koja se koristi da se taj tip manifestacije"/><Run Text=" "/><Run Text="označi na mapi."/></TextBlock>-->
+        <!--<Separator HorizontalAlignment="Left" Height="20" Margin="10,300,0,0" VerticalAlignment="Top" Width="459" Background="#FFAC2D2D"/>-->
+
+    </Grid>
+</Window>

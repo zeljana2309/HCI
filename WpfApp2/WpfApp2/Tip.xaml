@@ -1,0 +1,111 @@
+﻿<Window x:Class="WpfApp2.Tip"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        xmlns:val="clr-namespace:WpfApp2.Validacija"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Kreiranje tipa" Height="630" Width="930">
+    <Grid Margin="0,0,-8,-21">
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/nevesinje-ribolov013.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="117*"/>
+        </Grid.ColumnDefinitions>
+        <Viewbox Grid.Column="2" HorizontalAlignment="Left" Height="280" Margin="0,20,0,0" VerticalAlignment="Top" Width="450" Stretch="Fill">
+            <Viewbox Height="338" Stretch="Fill" Width="517">
+                <Viewbox Height="283" Stretch="Fill" Width="458">
+                    <Grid Height="303" Width="473">
+                        <Viewbox Margin="-90,81,-99,-206" Stretch="Fill"/>
+
+                    </Grid>
+
+                </Viewbox>
+
+            </Viewbox>
+
+        </Viewbox>
+        <Label Content="Jezero Alagovac ,Nevesinje" Grid.Column="2" HorizontalAlignment="Left" Margin="482,548,0,0" VerticalAlignment="Top" Height="32" Width="166"/>
+        <Grid Grid.Column="1" Margin="0,94,144,133" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="11*"/>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="563*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Background="#FFABB9C1" Margin="-66,58,120,-53" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="107*"/>
+                    <ColumnDefinition Width="433*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="ID *" HorizontalAlignment="Left" Margin="43,25,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ime *" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top"/>
+                <Label Content="Ikonica *" HorizontalAlignment="Left" Margin="43,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.354,0.038"/>
+                <Label Content="Opis" HorizontalAlignment="Left" Margin="43,228,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="tipID" LostFocus="tipID_LostFocus" GotFocus="tipID_GotFocus" PreviewMouseLeftButtonUp="tipID_PreviewMouseLeftButtonUp" KeyboardNavigation.TabIndex="0" HorizontalAlignment="Left" Height="23" Margin="18,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" TextChanged="TextBox_TextChanged" Grid.Column="1">
+                    <TextBox.Text>
+                        <Binding Path="ValidString4" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:ValidationString ValidationStep="RawProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                <Popup x:Name="popupID" Width="450" Height="60" PlacementTarget="{Binding ElementName=tipID}" Placement="Right"
+        StaysOpen="{Binding Path=IsKeyboardFocused}" AllowsTransparency="True">
+                    <Grid Background="BurlyWood" Width="250" Height="120" Margin="0,0,0,0">
+                        <TextBlock TextWrapping = "Wrap" Foreground = "Black"
+               Text = "Unijeti ID tipa.ID mora biti jedinstven,nemojte unositi ID koji ste već dodijelili nekom tipu. ID može da sadrži biilo koji skup karaktera." Margin="0,0,0,61" />
+                    </Grid>
+                </Popup>
+                <TextBox Name="tipIme" LostFocus="tipIme_LostFocus" GotFocus="tipIme_GotFocus" PreviewMouseLeftButtonUp="tipIme_PreviewMouseLeftButtonUp" KeyboardNavigation.TabIndex="1" HorizontalAlignment="Left" Height="23" Margin="18,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" Grid.Column="1">
+                    <TextBox.Text>
+                        <Binding Path="ValidString5" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <val:ValidationString ValidationStep="RawProposedValue"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                <Popup x:Name="popupIme" Width="450" Height="90" PlacementTarget="{Binding ElementName=tipIme}" Placement="Right"
+        StaysOpen="{Binding Path=IsKeyboardFocused}" AllowsTransparency="True">
+                    <Grid Background="BurlyWood" Width="280" Height="140" Margin="0,0,10,0">
+                        <TextBlock TextWrapping = "Wrap" Foreground = "Black"
+               Text = "Unesite ime koje želite dodijeliti tipu,radi lakšeg raspoznavanja. Ime može sadržati bilo koje karaktere,ali se preporučuje da bude sastavljen od slova i brojeva koji će Vam jasno govoriti o kom tipu se radi." Margin="0,0,0,61" />
+                    </Grid>
+                </Popup>
+                <Button Content="Potvrdi" HorizontalAlignment="Left" Margin="256,322,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.02,1.527" Click="Button_Click" Grid.Column="1">
+                </Button>
+                <Button Content="Odustani" HorizontalAlignment="Left" Margin="336,322,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.987,1.736" Click="Button_Click_1" Grid.Column="1"/>
+                <TextBox Name="tipOpis"  LostFocus="tipOpis_LostFocus" GotFocus="tipOpis_GotFocus" PreviewMouseLeftButtonUp="tipOpis_PreviewMouseLeftButtonUp" HorizontalAlignment="Left" Height="113" Margin="18,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="222" Grid.Column="1"/>
+                <Popup x:Name="popupOpis" Width="450" Height="60" PlacementTarget="{Binding ElementName=tipOpis}" Placement="Right"
+        StaysOpen="{Binding Path=IsKeyboardFocused}" AllowsTransparency="True">
+                    <Grid Background="BurlyWood" Width="280" Height="110" Margin="0,0,10,0">
+                        <TextBlock TextWrapping = "Wrap" Foreground = "Black"
+               Text = " Unesite opis ovog tipa manifestacije. Ovo je opciono polje i ovdje možete, ako želite, unijeti neke dodatne podatke o ovom tipu manifestacije." Margin="0,0,0,61" />
+                    </Grid>
+                </Popup>
+                <Canvas HorizontalAlignment="Left" Height="81" Margin="18,88,0,0" VerticalAlignment="Top" Width="103" Background="White" Grid.Column="1">
+                    <Image x:Name="image" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="103"/>
+                </Canvas>
+                <Button Content="Potraži.." HorizontalAlignment="Left" Margin="144,119,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" FontFamily="Arial Unicode MS" Grid.Column="1">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Uvoz ikonice</TextBlock>
+                                <TextBlock>Klikom na ovo dugme birate da uvezete ikonicu sa vaseg racunara.</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                <Label Content="Polja označena sa * su obavezna." HorizontalAlignment="Left" Margin="13,322,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="200" Foreground="#FFCF0606" FontWeight="Bold"/>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</Window>

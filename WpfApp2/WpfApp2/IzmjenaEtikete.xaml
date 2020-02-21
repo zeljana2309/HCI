@@ -1,0 +1,48 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="WpfApp2.IzmjenaEtikete"
+        mc:Ignorable="d"
+    WindowStartupLocation="CenterScreen"
+        Title="Izmjena etikete" Height="600" Width="600">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/sahat-kula-nevesinje2.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid HorizontalAlignment="Left" Height="305" Margin="50,170,0,0" VerticalAlignment="Top" Width="460" Background="#FFC9D1DA" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.258"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Label Content="ID *" HorizontalAlignment="Left" Margin="55,24,0,0" VerticalAlignment="Top" Height="36" Width="68"/>
+            <Label Content="Boja *" HorizontalAlignment="Left" Margin="55,65,0,0" VerticalAlignment="Top"/>
+            <Label Content="Label" HorizontalAlignment="Left" Height="0" Margin="115,210,0,0" VerticalAlignment="Top" Width="13"/>
+            <Label Content="Opis" HorizontalAlignment="Left" Margin="55,125,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.206,0.923"/>
+            <Button Content="Odustani" HorizontalAlignment="Left" Margin="375,275,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.667,0.5" Click="Button_Click_1"/>
+            <Button Content="Potvrdi" HorizontalAlignment="Left" Margin="295,275,0,0" VerticalAlignment="Top" Width="75" Click="Potvrdi_Click"/>
+            <TextBox Name="tbID" IsEnabled="False" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="115,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+            <Grid>
+                <TextBox Name="tbOpis" GotFocus="tbOpis_GotFocus" LostFocus="tbOpis_LostFocus" PreviewMouseLeftButtonUp="tbOpis_PreviewMouseLeftButtonUp" HorizontalAlignment="Left" Height="101" Margin="115,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+                <Popup x:Name="popupOpis" Width="450" Height="60" PlacementTarget="{Binding ElementName=tbOpis}" Placement="Right"
+        StaysOpen="{Binding Path=IsKeyboardFocused}" AllowsTransparency="True">
+                    <Grid Background="BurlyWood" Width="280" Height="120" Margin="0,0,10,0">
+                        <TextBlock TextWrapping = "Wrap" Foreground = "Black"
+               Text = "Ovdje možete unijeti dodatni opis etikete,kao i šta ona predstavlja. Opciono polje." Margin="0,0,47,61" />
+                    </Grid>
+                </Popup>
+            </Grid>
+            <xctk:ColorPicker Name="colorPicker" HorizontalAlignment="Left" Margin="115,69,0,0" VerticalAlignment="Top" Width="90"/>
+            <Label Content="Polja označena sa * su obavezna." HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top" Width="200" Foreground="#FFCF0606" FontWeight="Bold"/>
+            <Button Content="Pomoć" HorizontalAlignment="Left" Margin="375,9,0,0" VerticalAlignment="Top" Width="75" Click="Pomoc_Click_" RenderTransformOrigin="2.867,0.5"/>
+        </Grid>
+        <Label Content="Sahat kula,Nevesinje&#xA;" HorizontalAlignment="Left" Margin="440,10,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

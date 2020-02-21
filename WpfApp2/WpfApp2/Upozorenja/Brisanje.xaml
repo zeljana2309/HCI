@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfApp2.Upozorenja.Brisanje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2.Upozorenja"
+         WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Brisanje" Height="280" Width="370">
+    <Grid Margin="0,0,2,2">
+        <Button Content="OK" HorizontalAlignment="Left" Margin="159,200,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.467,2.25" Height="20" Click="OK_Click"/>
+        <Button Content="Odustani" HorizontalAlignment="Left" Margin="251,200,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.307,1.5" Click="Button_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="50" Margin="10,25,0,0" TextWrapping="Wrap" Text="Da li ste sigurni da zelite ovu akciju?" VerticalAlignment="Top" Width="315" FontSize="18"/>
+
+    </Grid>
+</Window>

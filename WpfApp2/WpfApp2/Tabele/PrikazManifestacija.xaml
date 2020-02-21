@@ -1,0 +1,82 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2.Tabele"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="WpfApp2.Tabele.PrikazManifestacija"
+        mc:Ignorable="d"
+        Title="PrikazManifestacija" Height="530" Width="800">
+
+    <Grid>
+        <DataGrid ItemsSource="{Binding Manifestacije}" SelectedCellsChanged="dataGridManifestacije_SelectedCellsChanged" AutoGenerateColumns="False" Height="185" HorizontalAlignment="Left" Margin="1,1,0,0" x:Name="dataGridManifestacije" VerticalAlignment="Top" Width="409" IsReadOnly="True" IsSynchronizedWithCurrentItem="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tip" MinWidth="60" Width="SizeToCells" Binding="{Binding Tipp.Ime}" />
+                <DataGridTextColumn Width="100" Header="ID" Binding="{Binding IDManifestacija}" />
+                <DataGridTextColumn Width="100" Header="Ime" Binding="{Binding ImeManifestacija}" />
+                <DataGridTextColumn Width="100" Header="Opis" Binding="{Binding OpisManif}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid DataContext="{Binding SelectedItem, ElementName=dataGridManifestacije}" HorizontalAlignment="Left" Height="254" Margin="1,191,0,0" VerticalAlignment="Top" Width="791" Background="#FFC5D6A6">
+            <Label Content="ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <TextBox IsReadOnly="True" Text="{Binding IDManifestacija}" HorizontalAlignment="Left" Height="23" Margin="53,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Ime" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.395,-2.308"/>
+            <TextBox IsReadOnly="True" Text="{Binding ImeManifestacija}" HorizontalAlignment="Left" Height="23" Margin="53,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Tip manifestacije *" HorizontalAlignment="Left" Margin="9,69,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.496,0.038"/>
+            <Label Content="Datum održavanja *" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+            <DatePicker SelectedDate="{Binding DatumManifest}"  IsEnabled="False" HorizontalAlignment="Left" Margin="130,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.373,-2.417"/>
+
+            <Label Content="Dostupno za hendikepirane *" HorizontalAlignment="Left" Margin="9,129,0,0" VerticalAlignment="Top"/>
+            <Label Content="Održava se : " HorizontalAlignment="Left" Margin="9,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,1.192"/>
+            <Label Content="Pušenje " HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.118,-3.462"/>
+            <Label Content="Kategorija cijena " HorizontalAlignment="Left" Margin="9,217,0,0" VerticalAlignment="Top"/>
+            <Label Content="Alkohol" HorizontalAlignment="Left" Margin="394,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,3.077"/>
+            <Label Content="Ikonica *" HorizontalAlignment="Left" Margin="388,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.106,-0.593"/>
+            <TextBox IsReadOnly="True" Text="{Binding OpisManif}"  HorizontalAlignment="Left" Height="48" Margin="455,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264"/>
+            <Label Content="Opis manifestacije" HorizontalAlignment="Left" Margin="344,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.579,-2.192" Width="106"/>
+            <Label Content="Etiketa" HorizontalAlignment="Left" Margin="394,199,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.126,-0.184"/>
+            <TextBox IsReadOnly="True" Text="{Binding Dostupno}" HorizontalAlignment="Left" Height="23" Margin="178,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+            <TextBox IsReadOnly="True" Text="{Binding OdrzavaSe}" HorizontalAlignment="Left" Height="23" Margin="92,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox IsReadOnly="True" Text="{Binding DozvoljenoPusenje}" HorizontalAlignment="Left" Height="23" Margin="92,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Image  Source="{Binding ikonicaManif, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="57" Margin="469,72,0,0" VerticalAlignment="Top" Width="75"/>
+            <TextBox IsReadOnly="True" Text="{Binding Tipp.Ime}" HorizontalAlignment="Left" Height="23" Margin="118,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131"/>
+            <TextBox IsReadOnly="True" Text="{Binding Katcijena}" HorizontalAlignment="Left" Height="23" Margin="110,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+            <TextBox IsReadOnly="True" Text="{Binding Alkoholl}" HorizontalAlignment="Left" Height="23" Margin="455,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"/>
+            <TextBox IsReadOnly="True" Name="etiketePrikaz" HorizontalAlignment="Left" Height="23" Margin="455,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139"/>
+            <Grid Name="gridElipse" HorizontalAlignment="Left" Height="23" Margin="599,202,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.438,0.522" Background="White"/>
+        </Grid>
+        <Button Content="Izmjeni " HorizontalAlignment="Left" Margin="10,459,0,0" VerticalAlignment="Top" Width="150" Height="30" Click="Izmjeni_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="5" Margin="295,450,0,0" VerticalAlignment="Top" Width="0"/>
+        <Button Content="Izbriši" HorizontalAlignment="Left" Margin="180,459,0,0" VerticalAlignment="Top" Width="145" Height="30" RenderTransformOrigin="0.28,0.667" Click="IzbrisiManifestaciju_Click"/>
+        <Button Content="Zatvori" HorizontalAlignment="Left" Margin="657,460,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="1.667,1" Height="29" Click="Zatvori_Click"/>
+        <Grid HorizontalAlignment="Left" Height="177" Margin="425,8,0,0" VerticalAlignment="Top" Width="355" RenderTransformOrigin="0.5,0.5" Background="#FFC5D6A6">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.168"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <GroupBox Header="Izaberite filter u vidu tipa manifestacije" HorizontalAlignment="Left" Height="67" Margin="10,10,0,0" VerticalAlignment="Top" Width="325" Foreground="#FFC14C4C">
+                <Grid>
+                    <ComboBox Name="comboTipoviFiltracija" SelectionChanged="tipoviZaFiltraciju_SelectionChanged"  DisplayMemberPath="Ime" HorizontalAlignment="Left" Height="25" Margin="72,10,0,0" VerticalAlignment="Top" Width="174" RenderTransformOrigin="0.798,0.643"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Unesite oznaku manifestacije za pretragu" Foreground="#FFC14C4C" HorizontalAlignment="Left" Height="60" Margin="10,82,0,0" VerticalAlignment="Top" Width="325">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="69*"/>
+                        <ColumnDefinition Width="244*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="pretraga" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Grid.ColumnSpan="2"/>
+                    <Button Content="Pretraži" HorizontalAlignment="Left" Margin="109.967,10,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" Height="23" Foreground="#FFC14C4C" Click="pronadji_Click" Grid.Column="1"/>
+                </Grid>
+            </GroupBox>
+            <Button Content="Vrati na pocetno" HorizontalAlignment="Left" Margin="19,147,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="-0.374,0.545" Height="25" Foreground="#FFC14C4C" Click="Vrati_Click"/>
+            <Button Content="Pretraga po svim poljima" HorizontalAlignment="Left" Margin="163,147,0,0" VerticalAlignment="Top" Width="172" Click="Button_Click" Height="25" Foreground="#FFC14C4C"/>
+        </Grid>
+    </Grid>
+
+</Window>

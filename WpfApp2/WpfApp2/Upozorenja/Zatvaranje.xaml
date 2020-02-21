@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfApp2.Upozorenja.Zatvaranje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2.Upozorenja"
+        mc:Ignorable="d"
+        Title="Zatvaranje" Height="202" Width="314">
+    <Grid>
+        <TextBlock Margin="20,35,17,92"  x:Name="Poruka" FontSize="18" FontFamily="Lato"  HorizontalAlignment="Center"><Run Text="Da li zelite da sacuvate izmjene?"/></TextBlock>
+        <Button Content="Da" HorizontalAlignment="Left" Margin="75,125,0,0" VerticalAlignment="Top" Width="75" Click="Da_click"/>
+        <Button Content="Ne" HorizontalAlignment="Left" Margin="175,125,0,0" VerticalAlignment="Top" Width="75"  Click="Ne_click"/>
+
+    </Grid>
+</Window>
