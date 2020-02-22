@@ -5,8 +5,9 @@ Small WPF app that enables managing data about manifestations of one city. You c
 
 This is a git command for coping the content of this repository.
 
+```sh
 $ git clone https://github.com/zeljana2309/HCI.git
-
+```
 
 ## Prerequisites
 
@@ -20,4 +21,4 @@ Open Visual Studio, go to File/ Open/ Project/Solution. Inside the folder named 
 
 ## Author 
 
-Zeljana Sipovac
+* Zeljana Sipovac
